@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movePos = 5f;
+    public float movePos = 2.5f;
 
     public Rigidbody2D rb;
     public Camera cam;
