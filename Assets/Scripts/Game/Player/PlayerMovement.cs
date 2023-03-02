@@ -13,12 +13,19 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Vector2 mousePos;
 
+    private void Start()
+    {
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
+    }
+
     private void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        
     }
 
     private void FixedUpdate()
@@ -29,5 +36,8 @@ public class PlayerMovement : MonoBehaviour
 
         float angle = Mathf.Atan2(lookDir.y , lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
+
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
     }
 }

@@ -5,12 +5,13 @@ using UnityEngine;
 public class Zombie_movement : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2f;
     private Rigidbody2D rb;
     private Vector2 movement;
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        rb.velocity = Vector2.zero;
     }
 
     // Update is called once per frame
