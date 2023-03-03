@@ -10,7 +10,10 @@ public class ZombieDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            playerHealth = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerHealth>();
+        }
     }
 
     // Update is called once per frame

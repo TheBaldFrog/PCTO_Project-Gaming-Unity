@@ -19,8 +19,8 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     public void TakeDamage(int damage)
     {
-        currenthealth -= damage;
-        HitSound.Play();
+        health -= damage;
+        //_healthBar.TakeDamage(damage);
 
         if (currenthealth <= 0) {
             
