@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 40;
+    public int damage = 50;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(this.gameObject);
