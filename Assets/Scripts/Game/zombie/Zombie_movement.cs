@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Zombie_movement : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float moveSpeed = 2f;
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -12,6 +12,11 @@ public class Zombie_movement : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.zero;
+
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            player = GameObject.FindWithTag("Player").transform;
+        }
     }
 
     // Update is called once per frame
