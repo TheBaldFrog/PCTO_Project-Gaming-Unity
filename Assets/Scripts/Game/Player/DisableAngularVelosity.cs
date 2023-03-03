@@ -5,7 +5,7 @@ public class DisableAngularVelosity : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject go = GameObject.Find("Player");
-        GameObject ZM = GameObject.Find("Player");
+        GameObject ZM = GameObject.Find("Zombie_M");
 
         if (go != null)
         {
@@ -18,7 +18,7 @@ public class DisableAngularVelosity : MonoBehaviour
             
         }
 
-        if(ZM!= null)
+        if(ZM != null)
         {
             Rigidbody2D zm = ZM.gameObject.GetComponent<Rigidbody2D>();
 

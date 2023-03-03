@@ -12,19 +12,19 @@ public class PlayerHealth : MonoBehaviour
         health = maxHealth;
     }
 
-    private void Update()
-    {
-        
-    }
-
     // Update is called once per frame
     public void TakeDamage(int damage)
     {
         health -= damage;
         _healthBar.TakeDamage(damage);
-
+        /*GameObject HB = GameObject.Find("HB_Hoverlay");
+        if (HB != null)
+        {
+            
+        }*/
 
         if (health <= 0) {
+            // End game;
             Destroy(gameObject);
         }
     }
