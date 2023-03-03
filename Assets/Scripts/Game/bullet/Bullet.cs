@@ -1,15 +1,16 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-       // Destroy();
-    }*/
-
+    public int damage = 40;
     private void OnCollisionEnter2D(Collision2D collision)
-    {    
-            Destroy(this.gameObject);
+    {
+        Destroy(this.gameObject);
+
+        if(collision.gameObject.TryGetComponent<ZombieHealth>(out ZombieHealth enemyComponent))
+        {
+            enemyComponent.TakeDamage(damage);
+        }
     }
 }

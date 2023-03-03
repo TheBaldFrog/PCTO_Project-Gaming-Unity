@@ -8,13 +8,20 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if(Time.time >= nextAttackTime)
         {
-            Shoot();
+ 
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+                nextAttackTime = Time.time + 1f /attackRate;
+            }
         }
     }
     void Shoot()
@@ -22,5 +29,7 @@ public class Shooting : MonoBehaviour
         GameObject bullet =  Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
     }
+
 }

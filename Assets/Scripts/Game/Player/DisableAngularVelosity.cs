@@ -15,7 +15,7 @@ public class DisableAngularVelosity : MonoBehaviour
 
             rbdy.angularVelocity = 0;
 
-            Debug.Log("has been destroyed.");
+            
         }
 
         if(ZM!= null)
@@ -26,7 +26,7 @@ public class DisableAngularVelosity : MonoBehaviour
 
             zm.angularVelocity = 0;
 
-            Debug.Log("has been destroyed.");
+            
         }
 
 
