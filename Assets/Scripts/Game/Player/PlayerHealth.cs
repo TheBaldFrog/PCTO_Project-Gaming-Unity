@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private AudioSource HitSound;
     [SerializeField] private float startingHealth;
-    public float currenthealth { get; private set; }
+    public float currenthealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +19,14 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     public void TakeDamage(int damage)
     {
-        currenthealth = Mathf.Clamp(currenthealth - damage, 0, startingHealth);
+        currenthealth -= damage;
+        HitSound.Play();
 
         if (currenthealth <= 0) {
+            
             Destroy(gameObject);
-        }
-    }
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.E)) {
-            TakeDamage(1);
+            SceneManager.LoadScene("MainMenu");
+
         }
     }
 }
