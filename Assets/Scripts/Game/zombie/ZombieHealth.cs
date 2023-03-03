@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ZombieHealth : MonoBehaviour
 {
-    [SerializeField] float health, maxHealth = 3f;
+    [SerializeField] float health, maxHealth = 100;
     // Start is called before the first frame update
     void Start()
     {
