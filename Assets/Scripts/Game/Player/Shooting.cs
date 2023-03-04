@@ -11,6 +11,12 @@ public class Shooting : MonoBehaviour
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
+    private int cont = 0;
+
+    [SerializeField] private AudioSource FireSound;
+    [SerializeField] private AudioSource ReloadSound;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +26,14 @@ public class Shooting : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 Shoot();
+                cont++;
+                FireSound.Play();
+                if (cont >= 6)
+                {
+                    ReloadSound.Play();
+                    cont = 0;
+                }
+
                 nextAttackTime = Time.time + 1f /attackRate;
             }
         }

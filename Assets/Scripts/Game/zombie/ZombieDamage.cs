@@ -6,6 +6,7 @@ public class ZombieDamage : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     
+    
     public int damage = 2;
     // Start is called before the first frame update
     void Start()

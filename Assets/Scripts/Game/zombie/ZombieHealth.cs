@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ZombieHealth : MonoBehaviour
 {
+    [SerializeField] private AudioSource HitSound;
     [SerializeField] float health, maxHealth = 3f;
     // Start is called before the first frame update
     void Start()
