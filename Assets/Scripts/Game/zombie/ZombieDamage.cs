@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZombieDamage : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
+    private PlayerHealth playerHealth;
     
     public int damage = 20;
     // Start is called before the first frame update
@@ -27,8 +27,8 @@ public class ZombieDamage : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             playerHealth.TakeDamage(damage);
-            
-            
+
+            Debug.Log("AOOOOOOOOOOOO");
         }
     }
 }

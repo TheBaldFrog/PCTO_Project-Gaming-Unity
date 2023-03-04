@@ -20,13 +20,13 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currenthealth -= damage;
-        HitSound.Play();
+        //HitSound.Play();
 
-        if (currenthealth <= 0) {
+        if (currenthealth < 0) {
             
             Destroy(gameObject);
-            SceneManager.LoadScene("MainMenu");
-
+            //SceneManager.LoadScene("MainMenu");
+            Debug.Log("Player Health");
         }
     }
 }

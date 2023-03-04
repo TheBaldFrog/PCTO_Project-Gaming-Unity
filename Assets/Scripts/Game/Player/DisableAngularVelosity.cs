@@ -18,7 +18,7 @@ public class DisableAngularVelosity : MonoBehaviour
             
         }
 
-        if(ZM!= null)
+        /*if(ZM!= null)
         {
             Rigidbody2D zm = ZM.gameObject.GetComponent<Rigidbody2D>();
 
@@ -27,7 +27,7 @@ public class DisableAngularVelosity : MonoBehaviour
             zm.angularVelocity = 0;
 
             
-        }
+        }*/
 
 
     }

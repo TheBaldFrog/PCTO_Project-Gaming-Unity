@@ -17,7 +17,7 @@ public class ZombieHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        HitSound.Play();
+       // HitSound.Play();
         if (health <= 0) {
             Destroy(gameObject);
         }
