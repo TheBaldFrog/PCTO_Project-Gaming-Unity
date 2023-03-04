@@ -4318,7 +4318,7 @@ MonoBehaviour:
   firePoint: {fileID: 122198297}
   bulletPrefab: {fileID: 4418204031535990349, guid: 2598b535da494ed449126f9580b7a770, type: 3}
   bulletForce: 10
-  attackRate: 2
+  attackRate: 6
   FireSound: {fileID: 1656378511}
   ReloadSound: {fileID: 1656378512}
 --- !u!70 &1656378505
